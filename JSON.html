@@ -1,0 +1,39 @@
+JSON = JavaScript Object notation
+JSO = JavaScript Object
+Syntax for storing and exchanging data
+JSON is text
+JSON is a lightweight data-interchange format
+JSON is "self-describing"
+JSON is language-independent
+
+When exchanging data between server and browser, the data can only be sent as text
+We can convert any JSON into javascript objects
+
+
+<!-- Sending data -->
+<!-- This converts JSO into JSON -->
+<script>
+var myObj = {"name": "John", "age":"31", "city":"new york"};
+var myJSON = JSON.stringify(myObj);
+</script>
+
+<!-- recieving data -->
+<!-- This converts JSON into JSO -->
+<script>
+var myJSON = '{"name":"John", "age":"31", "city":"new york"}';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+</script>
+
+<!-- storing data -->
+<!-- Makes JSO, Converts JSO into JSON, stores JSON, retrieves JSON, converts JSON into JSO  from storage and sets content-->
+<script>
+//the storing process
+myObj = { "name":"John", "age":31, "city":"new york"};
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+//the retrieving from storage process
+text = localstorage.getItem("testJSON");
+obj.JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name + " - " + obj.age + " - " + obj.city;
+</script>

@@ -1,0 +1,29 @@
+<!-- Ajax success -->
+<script>
+$.ajax({
+  url: "rest/login",
+  success: function(data){
+    $( ".result" ).html(data);
+  }
+});
+</script>
+
+<!-- ajax error -->
+$.ajax({
+  error:function(jqXHR, text, error){
+  alert(jqXHR.status + text + error);
+  }
+})
+</script>
+
+<!-- to avoid caching in IE or possibly other browsers?? -->
+<script>
+$(document).ajaxSetup({cache:false});
+</script>
+
+<!-- global eventt at all ajax calls -->
+<script>
+$(document).ajaxSend(function(event, xhr, settings) {
+  xhr.setRequestHeader('Authorization', 'Bearer' + localStorage.getItem('jwttoken'), settings.async = true);
+});
+</script>

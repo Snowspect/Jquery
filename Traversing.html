@@ -1,0 +1,80 @@
+jQuery traversing, which means "move through", are used to "find"
+(or select) HTML elements based on their relation to other elements.
+Start with one selection and move through that selection until
+you reach the elements you desire.
+
+
+The <div> element is the parent of <ul>, and an ancestor of everything inside of it
+The <ul> element is the parent of both <li> elements, and a child of <div>
+The left <li> element is the parent of <span>, child of <ul> and a descendant of <div>
+The <span> element is a child of the left <li> and a descendant of <ul> and <div>
+The two <li> elements are siblings (they share the same parent)
+The right <li> element is the parent of <b>, child of <ul> and a descendant of <div>
+The <b> element is a child of the right <li> and a descendant of <ul> and <div>
+
+An ancestor is a parent, grandparent, great-grandparent, and so on.
+A descendant is a child, grandchild, great-grandchild, and so on.
+Siblings share the same parent.
+
+<!-- useful jquery methods for traversing the dom: -->
+parent()
+parents()
+parentsUntil()
+
+<!-- The following example returns the direct parent element of each <span> elements: -->
+<script>
+$(document).ready(function(){
+    $("span").parent();
+});
+</script>
+
+<!-- The following example returns all ancestors of all <span> elements: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("span").parents().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+</head>
+
+<body class="ancestors">body (great-great-grandparent)
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>
+  </div>
+</body>
+
+<!-- The outer red border, before the body element, is the html element (also an ancestor) -->
+</html>
+
+-----------------------------------------------------------------------------------------------------------
+
+<!-- The following example returns all ancestors of all <span> elements that are <ul> elements: -->
+<script>
+$(document).ready(function(){
+    $("span").parents("ul");
+});
+</script>
+
+
+<!-- The following example returns all ancestor elements between a <span> and a <div> element: -->
+<script>
+$(document).ready(function(){
+    $("span").parentsUntil("div");
+});
+</script>

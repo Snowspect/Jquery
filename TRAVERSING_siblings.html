@@ -1,0 +1,48 @@
+siblings()
+next()
+nextAll()
+nextUntil()
+prev()
+prevAll()
+prevUntil()
+
+<!-- The following example returns all sibling elements of <h2>: -->
+<script>
+$(document).ready(function(){
+    $("h2").siblings();
+});
+</script>
+
+<!-- The following example returns all sibling elements of <h2> that are <p> elements: -->
+<script>
+$(document).ready(function(){
+    $("h2").siblings("p");
+});
+</script>
+
+<!-- The following example returns the next sibling of <h2>: -->
+<script>
+$(document).ready(function(){
+    $("h2").next();
+});
+</script>
+
+<!-- The following example returns all next sibling elements of <h2>: -->
+<script>
+$(document).ready(function(){
+    $("h2").nextAll();
+});
+</script>
+
+<!-- The following example returns all sibling elements between a <h2> and a <h6> element: -->
+<script>
+$(document).ready(function(){
+    $("h2").nextUntil("h6");
+});
+</script>
+
+
+The prev(),
+prevAll() and prevUntil() methods work just like the methods above
+but with reverse functionality: they return previous sibling elements
+(traverse backwards along sibling elements in the DOM tree, instead of forward).

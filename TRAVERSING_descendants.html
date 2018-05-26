@@ -1,0 +1,32 @@
+
+children()
+find()
+
+<!-- The following example returns all elements that are direct children of each <div> elements -->
+<script>
+$(document).ready(function(){
+    $("div").children();
+});
+</script>
+
+
+<!-- The following example returns all <p> elements with the class name "first", that are direct children of <div>: -->
+<script>
+$(document).ready(function(){
+    $("div").children("p.first");
+});
+</script>
+
+<!-- The following example returns all <span> elements that are descendants of <div>: -->
+<script>
+$(document).ready(function(){
+    $("div").find("span");
+});
+</script>
+
+<!-- The following example returns all descendants of <div>: -->
+<script>
+$(document).ready(function(){
+    $("div").find("*");
+});
+</script>

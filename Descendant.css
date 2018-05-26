@@ -1,0 +1,28 @@
+/* descendant selector */
+/* ** defined by a space ** */
+div p {
+  /*descendant paragraphs of divs*/
+}
+
+/* child selector */
+/* ** defined by > ** */
+div > p {
+  /* immediate pagagraphs of divs affected */
+}
+
+/* adjacent sibling selector */
+/* ** defined by + ** */
+div + p {
+  /* affects the paragraph directly following a div */
+  /* that is, not nested paragraphs but paragraphs that appear right after a closed div */
+}
+
+
+/* General sibling selector */
+/* ** defined by ~ ** */
+div ~ p {
+  /* affects paragraphs that follows a div, that is, 5 paragraphs can follow a div,
+  not nested btw, and they would be affected */
+  /* nested paragraphs do not get affected */
+  /* paragraphs before the div are not affected either */
+}

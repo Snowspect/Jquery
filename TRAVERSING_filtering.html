@@ -1,0 +1,44 @@
+The most basic filtering methods are first(), last() and eq(),
+which allow you to select a specific element
+based on its position in a group of elements.
+
+Other filtering methods, like filter() and not()
+allow you to select elements that match, or do not match, a certain criteria.
+
+
+<!-- The following example selects the first <div> element: -->
+<script>
+$(document).ready(function(){
+    $("div").first();
+});
+</script>
+
+<!-- The following example selects the last <div> element: -->
+<script>
+$(document).ready(function(){
+    $("div").last();
+});
+</script>
+
+<!-- The index numbers start at 0, so the first element will have the index number 0 and not 1. The following example selects the second <p> element (index number 1): -->
+<script>
+$(document).ready(function(){
+    $("p").eq(1);
+});
+</script>
+
+<!-- The following example returns all <p> elements with class name "intro": -->
+<script>
+The following example returns all <p> elements with class name "intro":
+</script>
+
+<!-- The not() method returns all elements that do not match the criteria.
+
+Tip: The not() method is the opposite of filter().
+
+The following example returns all <p> elements that do not have class name "intro": -->
+<script>
+$(document).ready(function(){
+    $("p").not(".intro");
+});
+</script>
